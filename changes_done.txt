@@ -1,0 +1,16 @@
+1 - Previously API repsonse was returned as unicoded representation of list.
+    I modified the response of each API as json with following schema.
+    {"status_code": "",
+     "status_code_desc" : "",
+     "entries": []
+    }
+
+    Further each entry in entries will be a dictionary  with four keys named as 'area_code', 'phone_number', 'comment', 'report_count'
+
+2 - Added exception handling around each API while scraping data from source site.
+3 - Added logic to generate response json for success and failure case.
+4 - Handled failure case when source site is not reachable.
+5 - Handled failure case when source html does not contain html tags with id 'previews' and class 'oos_listItem'
+6 - Added test cases around testability of scraping service APIS
+7 - Added logic to validated the json schema in returned response
+8 - Added test case to validate the functionality of data getting saved into database as well after being scraped
